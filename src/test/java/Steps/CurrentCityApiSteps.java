@@ -1,9 +1,9 @@
 package Steps;
 
 import io.cucumber.java.ru.*;
+import pojoClasses.CurrentCityData;
+
 import static org.hamcrest.Matchers.*;
-
-
 import static io.restassured.RestAssured.*;
 
 public class CurrentCityApiSteps {

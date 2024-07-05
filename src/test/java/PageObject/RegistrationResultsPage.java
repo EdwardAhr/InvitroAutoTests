@@ -16,6 +16,26 @@ public class RegistrationResultsPage {
     //Поле 'Код ИНЗ'
     private final By codeInzField = new By.ByXPath("//input[@name = 'orderNumber']");
 
+    public By getUnauthResultsError() {
+        return unauthResultsError;
+    }
+
+    public By getSearchResultBtn() {
+        return searchResultBtn;
+    }
+
+    public By getLastNameField() {
+        return lastNameField;
+    }
+
+    public By getBirthdayField() {
+        return birthdayField;
+    }
+
+    public By getCodeInzField() {
+        return codeInzField;
+    }
+
     //Поле 'Дата рождения'
     private final By birthdayField = new By.ByXPath("//input[@name = 'birthday']");
 
@@ -26,7 +46,7 @@ public class RegistrationResultsPage {
     private final By searchResultBtn = new By.ByXPath("//button[text()='Найти результаты']");
 
     //Ошибка об обязательном заполнении полей
-    private final By UnauthResultsError = new By.ByXPath("//div[contains(@class,'UnauthResultsPage_error')]");
+    private final By unauthResultsError = new By.ByXPath("//div[contains(@class,'UnauthResultsPage_error')]");
 
     //Методы работы с вкладкой 'Результаты анализов'
 
@@ -57,18 +77,20 @@ public class RegistrationResultsPage {
     }
 
     @Description("Метод возвращающий поле ошибки об обязательном заполнении полей")
-    public SelenideElement UnauthResultsError() {
-        return  $(UnauthResultsError);
+    public SelenideElement unauthResultsError() {
+        return  $(unauthResultsError);
     }
 
     @Description("Метод возвращающий локатор поля 'Код ИНЗ'")
     public SelenideElement codeInzField() {
         return $(codeInzField);
     }
+
     @Description("Метод возвращающий локатор поля 'Дата рождения'")
     public SelenideElement birthdayField() {
         return $(birthdayField);
     }
+
     @Description("Метод возвращающий локатор поля 'Фамилия'")
     public SelenideElement lastNameField() {
         return $(lastNameField);

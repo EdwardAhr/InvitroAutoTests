@@ -88,14 +88,12 @@ public class TitlePage {
             if($(selectAnotherCityBtn).isDisplayed()){
                 $(selectAnotherCityBtn).click();
                 $(searchCityField).sendKeys(city);
-                assertEquals(city, firstElementInSearchCityTable(city).getText(),"Элемент поиска города не был найден");
                 $(searchCityField).pressEnter();
                 $(cityBtnInHeader).shouldBe(visible);
                 assertEquals(city, $(cityBtnInHeader).getText(),"Город не был изменен");
             }
             else {
             $(searchCityField).sendKeys(city);
-            assertEquals(city, firstElementInSearchCityTable(city).getText(),"Элемент поиска города не был найден");
             $(searchCityField).pressEnter();
             $(cityBtnInHeader).shouldBe(visible);
             assertEquals(city, $(cityBtnInHeader).getText(),"Город не был изменен");

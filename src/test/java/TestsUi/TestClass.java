@@ -74,7 +74,7 @@ public class TestClass {
     }
 
     @Test
-    @Description("Тест на проверку заполнения реквизитов во вкладке 'Получить результаты анализов' ")
+    @Description("Тест на проверку заполнения реквизитов во вкладке 'Результаты анализов' ")
     public void FillingRequisiteOnGetResultsAnalyzesPage() {
         String codeInzData = "231231231";
         String birthdayData = "11.12.2000";
@@ -83,7 +83,7 @@ public class TestClass {
 
         titlePage.resultsAnalyzesBtnClick();
         registrationResultsPage.searchResultBtnClick();
-        $(registrationResultsPage.UnauthResultsError()).shouldBe(visible);
+        $(registrationResultsPage.unauthResultsError()).shouldBe(visible);
         assertEquals(expectedColor,$(registrationResultsPage.codeInzField()).getCssValue("color"),"Поле 'Код Инз' не окрашено в красный");
         assertEquals(expectedColor,$(registrationResultsPage.birthdayField()).getCssValue("color"),"Поле 'Дата' не окрашено в красный");
         assertEquals(expectedColor,$(registrationResultsPage.lastNameField()).getCssValue("color"),"Поле 'ФИО' не окрашено в красный");
@@ -116,7 +116,7 @@ public class TestClass {
     assertTrue($(titlePage.getSearchPageResult()).text().contains(searchElement),"Поиск по элементу не прошел");
     }
 
-    @Description("Тест на открытия элементов popUp меню")
+    @Description("Тест на открытие элементов popUp меню")
     @Test
     public void PopupPageTest(){
         titlePage.selectPopupPage(PopUpMenuElement.DOCTORS);
